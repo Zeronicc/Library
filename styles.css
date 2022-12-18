@@ -6,6 +6,9 @@
 body {
     height: 100vh;
     width: 100vw;
+    background-image: linear-gradient(130deg,rgba(255, 166, 0, 0.90), lightgreen, rgba(255, 166, 0, 0.904));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .main-container {
@@ -22,35 +25,93 @@ h1 {
 
 .add-book-form {
     display: flex;
+    flex-flow: column;
+    align-items: center;
     gap: 25px;
 }
 
+#title-box, #author-box, #pages-box{
+    font-size: 1.5em;
+    padding-left: 5px;
+}
+
+.read-box{
+    display: flex;
+    gap: 30px;
+    font-size: 1.7em;
+}
+
+.library-container {
+    width: 80vw;
+}
 .display-books {
     display: grid;
-    grid-template-columns: 4fr 3fr 2fr 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
     column-gap: 50px;
-    justify-items: start;
-    row-gap: 30px;
-}
-.display-books h2 {
-    border-left: 1px black solid;
-
+    justify-items: center;
+    row-gap: 50px;
 }
 
-.underline {
-    grid-column: 1/-1;
-    grid-row: 2/3;
-    width: 100%;
-    margin-top: -20px;
-    border-top: 1px black solid;
-}
 
 .book-library{
-    
     grid-column: 1/-1;
     column-gap: 100px;
 }
-.library-checkbox {
-    margin-left: 20px;
+
+.card-container{
+    display: flex;
+    flex-flow: column wrap;
+    border: 3px rgb(0, 0, 0) solid;
+    gap: 10px;
+    min-width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    align-items: center;
+    
+    background-image: linear-gradient(130deg, rgba(255, 166, 0, 0.527), rgb(144, 238, 144));
+}
+
+.card-container p {
+    font-size: 1.5em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    padding: 0px 20px;
+}
+.delete-icon {
+    background-image: url(trash-can-outline.png);
+    background-color: black;
+    border-radius: 30px;
+    background-position: center;
+    width: 33px;
+    height: 33px;
+    position: relative;
+}
+
+.read-btn {
+    border-radius: 5px;
+    font-size: 1.5em;
+    border: none;
+    box-shadow: 3px 3px 0px rgb(0, 0, 0);
+    padding: 3px 10px;
+    margin: 3px;
+}
+
+.read-btn:hover{
+    background-color: rgb(37, 37, 37);
+    box-shadow: none;
+}
+.read-green {
+    background-color: rgb(50, 187, 46);
+    color: white;
+}
+
+.read-red{
+    background-color: rgb(255, 36, 36);
+    color: white;
 }
