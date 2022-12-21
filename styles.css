@@ -6,6 +6,7 @@
 body {
     height: 100vh;
     width: 100vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: linear-gradient(130deg,rgba(255, 166, 0, 0.90), lightgreen, rgba(255, 166, 0, 0.904));
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -19,39 +20,107 @@ body {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     margin-top: 50px;
+    color: rgb(14, 14, 14);
+}
+
+.add-btn {
+    font-size: 2.5em;
+    margin-top: -20px;
+    border-radius: 30px;
+    width: 45px;
+    border: none;
+    background-color: rgb(37, 37, 37);
+    color: white;
+    cursor: pointer;
+}
+.add-btn:hover{
+    background-color: rgb(83, 83, 83);
+    color: rgb(255, 255, 255);
 }
 
 .add-book-form {
-    display: flex;
     flex-flow: column;
     align-items: center;
+    position: fixed;
+    top: 25%;
     gap: 25px;
+    display: none;
+    border-radius: 10px;
+    background-color: rgb(37, 37, 37);
+    width: 250px;
+    padding: 40px 30px 30px 30px;
+    border: 3px black solid;
+    z-index: 1;
+}
+
+.add-book-form #add-btn{
+    border-radius: 5px;
+    font-size: 1.8em;
+    border: none;
+    padding: 3px 25px;
+    margin: 3px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(37, 37, 37);
+    cursor: pointer;
+}
+.add-book-form #add-btn:hover, .add-btn:hover{
+    background-color: rgb(83, 83, 83);
+    color: rgb(255, 255, 255);
+}
+
+
+.exit-form-btn{
+    margin-bottom: -40px;
+    position: relative;
+    font-size: 1.2em;
+    border-radius: 20px;
+    width: 22px;
+    border: none;
+    left: 133px;
+    bottom: 27px;
+    background-color: rgb(255, 36, 36);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
 }
 
 #title-box, #author-box, #pages-box{
     font-size: 1.5em;
-    padding-left: 5px;
+    padding: 4px 0px 4px 7px;
+    width: 96%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
 }
+
+#title-box:focus, #author-box:focus, #pages-box:focus{
+    background-color: rgb(209, 209, 209);
+}
+
 
 .read-box{
     display: flex;
     gap: 30px;
-    font-size: 1.7em;
+    font-size: 1.5em;
+    color: white;
+}
+
+#checkbox{
+    width: 17px;
+    cursor: pointer;
 }
 
 .library-container {
-    width: 80vw;
+    width: clamp(300px, 70vw, 1000px);
 }
 .display-books {
     display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 1fr));
-    column-gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 30px;
     justify-items: center;
     row-gap: 50px;
 }
-
 
 .book-library{
     grid-column: 1/-1;
@@ -61,7 +130,7 @@ h1 {
 .card-container{
     display: flex;
     flex-flow: column wrap;
-    border: 3px rgb(0, 0, 0) solid;
+    border: 3px rgb(37, 37, 37) solid;
     gap: 10px;
     min-width: 200px;
     padding: 20px;
@@ -81,16 +150,18 @@ h1 {
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
-    padding: 0px 20px;
+    text-align: center;
+    padding: 0px 15px;
 }
 .delete-icon {
     background-image: url(trash-can-outline.png);
-    background-color: black;
-    border-radius: 30px;
+    background-color: rgb(37, 37, 37);
+    border-radius: 20px;
     background-position: center;
     width: 33px;
     height: 33px;
-    position: relative;
+    border: 2px solid rgb(37, 37, 37);
+    cursor: pointer;
 }
 
 .read-btn {
@@ -100,10 +171,15 @@ h1 {
     box-shadow: 3px 3px 0px rgb(0, 0, 0);
     padding: 3px 10px;
     margin: 3px;
+    cursor: pointer;
 }
 
-.read-btn:hover{
-    background-color: rgb(37, 37, 37);
+.read-green:hover{
+    background-color: rgb(22, 78, 20);
+    box-shadow: none;
+}
+.read-red:hover{
+    background-color: rgb(124, 19, 19);
     box-shadow: none;
 }
 .read-green {

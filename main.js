@@ -1,15 +1,22 @@
+const body = document.querySelector("body")
 const addBtn = document.querySelector("#add-btn");
+const addBook = document.querySelector(".add-btn")
 const titleInput = document.querySelector("#title-box");
 const authorInput = document.querySelector("#author-box");
 const pagesInput = document.querySelector("#pages-box");
 const readInput = document.querySelector("#checkbox");
 const libraryContainer = document.querySelector(".display-books")
+const form = document.querySelector(".add-book-form")
 
 
 addBtn.addEventListener('click', (e) =>{
     e.preventDefault();
     addBookToLibrary();
     })
+
+addBook.addEventListener('click', () => {
+    form.style.display = "flex"
+})
 
 let myLibrary = [];
 
@@ -29,7 +36,12 @@ function addBookToLibrary() {
     if(myLibrary.some(book => book.title === title)) return;
     let newBook = new Book(title, author, pages, read);
     createBookCard(newBook);
-    myLibrary.push(newBook);    
+    myLibrary.push(newBook);
+    form.style.display = "none"
+    titleInput.value = "";
+    authorInput.value = "";
+    pagesInput.value = "";
+    readInput.checked = false;    
 }
 
 function createBookCard(book) {
@@ -78,6 +90,7 @@ function createBookCard(book) {
     })
 
     deleteBtn.addEventListener('click', e => {
+        myLibrary = myLibrary.filter(e => e !== book )
         cardContainer.remove()
     })
 
@@ -87,6 +100,15 @@ function createBookCard(book) {
     cardContainer.appendChild(pages);
     cardContainer.appendChild(readBtn);
     cardContainer.appendChild(deleteBtn)
+}
+
+
+function removeForm(){
+    titleInput.value = "";
+    authorInput.value = "";
+    pagesInput.value = "";
+    readInput.checked = false;
+    form.style.display = "none"
 }
 
 
