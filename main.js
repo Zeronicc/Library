@@ -80,12 +80,10 @@ function createBookCard(book) {
             readBtn.classList.remove('read-green')
             readBtn.classList.add('read-red')
             book.read = false
-            console.log(book)
         }else{
             readBtn.classList.remove('read-red')
             readBtn.classList.add('read-green')
             book.read = true
-            console.log(book)
         }
     })
 
