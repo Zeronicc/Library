@@ -70,7 +70,6 @@ h1 {
     color: rgb(255, 255, 255);
 }
 
-
 .exit-form-btn{
     margin-bottom: -40px;
     position: relative;
@@ -94,9 +93,7 @@ h1 {
     outline: none;
 }
 
-#title-box:focus, #author-box:focus, #pages-box:focus{
-    background-color: rgb(209, 209, 209);
-}
+#title-box:focus, #author-box:focus, #pages-box:focus{background-color: rgb(209, 209, 209);}
 
 
 .read-box{
@@ -106,14 +103,9 @@ h1 {
     color: white;
 }
 
-#checkbox{
-    width: 17px;
-    cursor: pointer;
-}
+#checkbox{width: 17px; cursor: pointer;}
 
-.library-container {
-    width: clamp(300px, 70vw, 1000px);
-}
+.library-container {width: clamp(300px, 70vw, 1000px);}
 .display-books {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -136,7 +128,6 @@ h1 {
     padding: 20px;
     border-radius: 10px;
     align-items: center;
-    
     background-image: linear-gradient(130deg, rgba(255, 166, 0, 0.527), rgb(144, 238, 144));
 }
 
@@ -146,9 +137,6 @@ h1 {
     word-wrap: break-word;
     -ms-word-break: break-all;
     word-break: break-word;
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
     hyphens: auto;
     text-align: center;
     padding: 0px 15px;
