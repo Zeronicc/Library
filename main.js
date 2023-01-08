@@ -121,8 +121,3 @@ function removeForm(){
     readInput.checked = false;
     form.style.display = "none"
 }
-
-
-
-
-
